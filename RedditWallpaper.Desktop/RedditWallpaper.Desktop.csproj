@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Version>0.2</Version>
+    <PackageId>RedditWallpaper</PackageId>
+    <Authors>@soulasvalentin</Authors>
+    <Product>RedditWallpaper</Product>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>signature.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyName>RedditWallpaper</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedditWallpaper.Core\RedditWallpaper.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,73 @@
+﻿<Window x:Class="RedditWallpaper.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedditWallpaper.Desktop"
+        mc:Ignorable="d"
+        Title="Reddit Wallpaper Picker" Height="705" Width="680" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <DockPanel Margin="10">
+            <!--topbar-->
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal" >
+                    <!--subreddit-->
+                    <StackPanel>
+                        <Label FontStyle="Italic" Content="Subreddit" BorderThickness="0"/>
+                        <ComboBox Name="cboxSubreddits" Width="176" Height="24" Margin="0,2,0,0" IsEditable="True" FontWeight="Bold" ItemsSource="{Binding Settings.Subreddits}" SelectedItem="{Binding Settings.Subreddit}" KeyDown="Subreddit_KeyDown">
+                        </ComboBox>
+                    </StackPanel>
+                    <!--topfilter-->
+                    <StackPanel Margin="10,0,0,0">
+                        <Label FontStyle="Italic" Content="Top of the" BorderThickness="0"/>
+                        <ComboBox Name="cboxLastUnit" ItemsSource="{Binding TimeSpanUnits}" SelectedItem="{Binding Settings.TimeSpan}" Width="84" Height="24" Margin="0,2,0,0" FontFamily="Segoe UI Semibold" FontSize="14"/>
+                    </StackPanel>
+                    <!--btn search-->
+                    <Button Click="BtnSearchClick" Margin="10,28,0,0" Content="Search" BorderThickness="0" Width="59" FontSize="14" Foreground="#FFF0F0F0" Background="#FF5FAC78"/>
+                    <!--btn next page-->
+                    <Button Name="btnNextPage" Visibility="Collapsed" Click="BtnNextPageClick" Margin="10,28,0,0" Content="Load more" BorderThickness="0" Width="74" FontStyle="Italic" FontSize="14" Foreground="#FFF0F0F0" Background="#FF5F89AC" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <!--wallpaper style-->
+                    <StackPanel>
+                        <Label FontStyle="Italic" Content="Wallpaper Style" BorderThickness="0"/>
+                        <ComboBox Name="cboxStyles" Width="100" Height="24" Margin="0,2,0,0" FontFamily="Segoe UI Semibold" FontSize="14" SelectedIndex="0">
+                            <ComboBoxItem Content="Stretched"></ComboBoxItem>
+                            <ComboBoxItem Content="Centered"></ComboBoxItem>
+                            <ComboBoxItem Content="Tiled"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <!--walpapers list-->
+            <ListView ItemsSource="{Binding WallPapers}" BorderThickness="0" Margin="0,10,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding ThumbnailUrl}"/>
+                            <StackPanel Margin="10,10,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Click="BtnDownloadWallpaper" Margin="0,0,10,0" Content="DOWNLOAD" ToolTip="Just download the image to the program directory" BorderThickness="0" Width="92" FontSize="14" Foreground="#FFF0F0F0" Background="#FF5F89AC"/>
+                                    <Button Click="BtnSetWallpaper" Margin="0,0,10,0" Content="SET" ToolTip="Download image and set as wallpaper" BorderThickness="0" Width="39" FontSize="14" Foreground="#FFF0F0F0" Background="#FF5F89AC"/>
+                                    <Button Click="BtnViewInBrowser" Margin="0,0,10,0" Content="WEB" ToolTip="Open the reddit post in the default browser" BorderThickness="0" Width="39" FontSize="14" Foreground="#FFF0F0F0" Background="#FF9E9E9E"/>
+                                    <TextBlock Text="{Binding Width, StringFormat=w{0}}" FontSize="18" FontFamily="Segoe UI Semibold"/>
+                                    <TextBlock Text=" x " FontSize="18" FontFamily="Segoe UI Semibold"/>
+                                    <TextBlock Text="{Binding Height, StringFormat=h{0}}" FontSize="18" FontFamily="Segoe UI Semibold"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" MaxWidth="450" Margin="0,10,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+        <!--BOTOM STATUS-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{Binding Status.BarColor}">
+            <TextBlock Margin="5,0,0,0" Text="{Binding Status.Message}" Foreground="White" FontFamily="Segoe UI" FontSize="14" FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditWallpaper.Core", "RedditWallpaper.Core\RedditWallpaper.Core.csproj", "{B513C20E-D161-43F7-9247-E00BF15EDD48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditWallpaper.Core.Tests", "RedditWallpaper.Core.Tests\RedditWallpaper.Core.Tests.csproj", "{22A40CAB-09B0-4527-A06E-6C2FA22B92F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditWallpaper.Desktop", "RedditWallpaper.Desktop\RedditWallpaper.Desktop.csproj", "{0CEA4192-F905-4296-9156-A9375A3ECE94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B513C20E-D161-43F7-9247-E00BF15EDD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B513C20E-D161-43F7-9247-E00BF15EDD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B513C20E-D161-43F7-9247-E00BF15EDD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B513C20E-D161-43F7-9247-E00BF15EDD48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A40CAB-09B0-4527-A06E-6C2FA22B92F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A40CAB-09B0-4527-A06E-6C2FA22B92F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A40CAB-09B0-4527-A06E-6C2FA22B92F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A40CAB-09B0-4527-A06E-6C2FA22B92F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CEA4192-F905-4296-9156-A9375A3ECE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CEA4192-F905-4296-9156-A9375A3ECE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CEA4192-F905-4296-9156-A9375A3ECE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CEA4192-F905-4296-9156-A9375A3ECE94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2854E489-DC45-4962-AA91-89892A9A71B1}
+	EndGlobalSection
+EndGlobal
